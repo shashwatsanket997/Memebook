@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="col-lg-5">
+{% for post in posts %}
+    {% include 'post.html' with post=post %}
+    <br/>
+{% endfor %}
+</div>
+
+{% endblock %}

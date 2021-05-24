@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="card col-md-auto p-5">
+  <div class="d-flex justify-content-center">
+    <h4>Register to Memebook</h4>
+  </div>
+  <br/>
+  <form method="POST">
+    {% csrf_token %} {% include 'form_template.html' with form=form%}
+    <button type="submit" class="btn btn-primary btn-block">Register</button>
+  </form>
+</div>
+{% endblock %}

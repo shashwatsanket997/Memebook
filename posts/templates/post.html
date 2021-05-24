@@ -1,0 +1,17 @@
+{% load post_tags %}
+
+<div class="card">
+  <div class="d-flex justify-content-center">
+    <img src="{{post.image.url}}" class="card-img-top" height="350" />
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{post.title}}</h5>
+    <p class="card-text">{{post.description}}</p>
+    <a href="/posts/{{post.id}}/like" class="card-text btn btn-sm btn-primary">
+      Likes <span class="badge bg-danger ms-2">{% likes_count post.id %}</span>
+    </a>
+    <small class="card-text">
+      Created by: <b>{{post.author.username}} </b> on {{post.createdAt}}
+    </small>
+  </div>
+</div>

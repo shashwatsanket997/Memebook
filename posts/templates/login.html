@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block content %}
+<div class="card col-md-auto p-5">
+  <div class="d-flex justify-content-center">
+    <h4>Login to Memebook</h4>
+  </div>
+  <br/>
+  {% if error_message %}
+  <span class="text-danger small">{{ error_message}}</span>
+  <br />
+  {% endif %}
+
+  <form method="POST">
+    {% csrf_token %}
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+      <input type="text" id="username" name="username" class="form-control" />
+      <label class="form-label" for="username" name="username">Username</label>
+    </div>
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+      <input
+        type="password"
+        id="password"
+        name="password"
+        class="form-control"
+      />
+      <label class="form-label" for="form1Example2">Password</label>
+    </div>
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+    <br />
+    <p>Don't have an account <a href="/register"> Register here </a></p>
+  </form>
+</div>
+{% endblock %}
